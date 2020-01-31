@@ -67,11 +67,7 @@ element.addEventListener("dblclick",function(){
     myprompt(this);
     var iarea=document.querySelector('.inpt');
     isubmitButton=document.querySelector('.isubmit');
-    linkinsertB=document.querySelector('#L');
-    linkinsertB.addEventListener('click',function(){
-      var textLINK=prompt("Enter the link");
-      document.querySelector('.iinput').value="<a href=\""+ textLINK +"\">"+ document.querySelector('.iinput').value + "</a>";
-    });
+    
     isubmitButton.addEventListener('click',()=>{
     var textHTML= document.querySelector('.iinput').value;
     if(textHTML==""){textHTML=bcpp}
@@ -83,6 +79,13 @@ element.addEventListener("dblclick",function(){
   });
 });
 }
+
+var linkinsertB=document.querySelector('#L');
+linkinsertB.addEventListener('click',function(){
+      var textLINK=prompt("Enter the link");
+      document.querySelector('.iinput').value="<a href=\""+ textLINK +"\">"+ document.querySelector('.iinput').value + "</a>";
+    });
+
 
 
 const chngbtn = document.querySelector('.change');
