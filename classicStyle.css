@@ -1,0 +1,234 @@
+.a4{
+	position: fixed;
+	bottom: 3%;
+	right: 2%;
+	border-radius: 50% ;
+	background-color:#5593fd;
+	padding: 10px;
+}
+.a5{
+	position: fixed;
+	bottom: 11%;
+	right: 2%;
+	border-radius: 50% ;
+	background-color: #5593fd;
+	padding: 10px;
+}
+
+.et{
+	cursor: move;
+}
+
+
+.tutorial{
+	min-width: 100%;
+	min-height: 100%;
+	background-color: rgba(0, 0, 0, 0.616);
+	position: fixed;
+	top: 0;
+	color: white;
+	font-size: 2em;
+	padding: 10px 1em 10px 1em;
+	border-radius: 7px;
+	display: none;
+	
+}
+
+.tt1b{
+	position: fixed;
+	top: 30%;
+	left: 35%;
+	padding: 10px 1em 10px 1em;
+	border-radius: 7px;
+	
+}
+
+.arrow{
+	animation-name: tutor;
+	animation-duration: 300ms;
+	animation-iteration-count: 3000;
+}
+@keyframes tutor {
+	from {
+		color: red;
+		transform: scale(1);
+	}
+	to {
+		color: rgb(229, 255, 0);
+		transform: scale(1.1);
+
+	}
+  }
+
+.tt2b{
+	position: fixed;
+	top: 42.5%;
+	left: 37.5%;
+	padding: 10px 1em 10px 1em;
+	border-radius: 7px;
+}
+
+.tt3a{
+	position: fixed;
+	font-size: 1.6em;
+}
+
+.tt3a1{
+	top: 73.8%;
+	left: 60px;
+}
+
+.tt3a2{
+	top: 73.8%;
+	right: 60px;
+}
+.tt3b{
+	position: fixed;
+	top: 68%;
+	left: 29.5%;
+	padding: 10px 1em 10px 1em;
+	border-radius: 7px;
+}
+
+.next{
+	position: fixed;
+	bottom: 3%;
+	right: 2%;
+	background-color: yellow;
+	color: black;
+	font-size: 0.7em;
+	padding: 10px 1em 10px 1em;
+	border-radius: 7px;
+}
+.tt2{
+	display: none;
+}
+.tt3{
+	display: none;
+}
+.next:hover{
+	background-color: rgb(255, 187, 0);
+	cursor: grab;
+}
+
+
+
+.active{
+	text-shadow:  -1px -1px 0 #ffff00, 1px -1px 0 #ffff00, 1px -1px 0 #ffff00, 1px -1px 0 #ffff00;
+}
+
+*{
+	position: sticky;
+}
+
+
+input[type="color"]{
+	width: 2rem;
+	height: 1.5rem;
+	background-color: rgb(0, 0, 0);
+	position: absolute;
+	bottom: 23%;
+	right: 30%;
+}
+
+.Download:hover, .a5:hover{
+	background-color: rgb(255, 208, 0);
+	box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
+	transform: scale(1.05);
+}
+.downloader{
+	position: fixed;
+	min-width: 100%;
+	min-height: 100vh;
+	background-color: rgba(0, 0, 0, 0.959);
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	display: none;
+}
+
+.DBox{
+	color: rgb(255, 255, 255);
+	font-size: 3em;
+	line-height: 2em;;
+}
+
+
+.intoMark{
+	position: fixed;
+	color: rgb(255, 255, 255);
+	top: 2%;
+	right : 3%;
+	font-size: 3.5em;
+	animation: beat 0.3s ease infinite;
+	cursor: hand;
+}
+
+@keyframes beat{
+	from{
+		transform: scale(1);
+		color: white;
+	}
+	to{
+		transform: scale(1.5);
+		color: rgb(255, 0, 0);
+	}
+}
+
+.intoMark:hover{
+	cursor: hand;
+}
+
+.inpt{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.822);
+	top: 0;
+	display: none;
+}
+.inpi{
+	border: 1.5px solid rgb(47, 0, 255);
+	position: fixed;
+	top: 50%;
+	right: 50%;
+	margin: -105.5px -177.75px 0 0 ;
+	background-color: white;
+	padding: 2em;
+	text-align: center;
+	background-color: rgb(46, 46, 46);
+	border-radius: 10px;
+}
+.inpb{
+	margin: 0.75em;
+}
+.pickerg{
+	position: absolute;
+	bottom: 23%;
+	right: 70px;
+	left: 40.5%;
+}
+.isubmit{
+	text-align: center;
+	background-color: rgb(119, 248, 68);
+	border-radius: 5px;
+	border: none;
+	
+}
+input[type="color"]{
+	background-color: black;
+	resize: none;
+}
+.inpl{
+	display: none;
+}
+#L{
+	position: absolute;
+	top: 55%;
+	left: 30%;
+	background-color: rgb(107, 255, 49);
+	border-radius: 5px;
+	border: none;
+
+}
