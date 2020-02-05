@@ -13,6 +13,10 @@ function activateChildren(parent){
 }
 activateChildren(document);
 
+const allLinks=document.querySelectorAll("a");
+for(linki of allLinks){
+  linki.href="javascript:void(0)";
+}
 
 var vbox = document.createElement('div');
 vbox.innerHTML="<div class=\"words\"><\div>";
@@ -20,7 +24,7 @@ vbox.style.display='none'
 document.body.appendChild(vbox);
 
 
-var inpbox="<div class=\"inpt\"><div class=\"inpi\">  <textarea name=\"text\" style = \"height: 10em; background-color: black; color: white; border-radius: 5px;resize: none; margin-bottom: 5em;\" placeholder=\"Enter the text here\" class=\"iinput\"></textarea><button class=\"inpb\" id=\"L\" >Insert Link</button><br><input type=\"color\" class=\"pickerg\"><br><button class=\"isubmit\">Submit</button></div></div><div class=\"inpl\"><div class=\"inpi\">  <textarea name=\"text\" placeholder=\"Enter the text here\"></textarea><br><br>  <textarea name=\"link\" placeholder=\"Enter the link here\"></textarea><br><br><button class=\"submit\">Submit</button></div></div>";
+var inpbox="<div class=\"inputArea\"><div class=\"inputBox\"><div class=\"InputBoxes-out\"><textarea class=\"textInput-area InputBoxes\" cols=\"30\" rows=\"10\" placeholder=\"Enter text here\"></textarea><br><textarea name=\"link\" class=\"textarea-link InputBoxes\" cols=\"30\" placeholder=\"Enter link here ( Optional )\"></textarea><br><input type=\"submit\" class=\"input-submit-button\"></div></div></div>";
 inpBOX = document.createElement('span');
 inpBOX.innerHTML=inpbox;
 document.body.appendChild(inpBOX);
@@ -30,41 +34,55 @@ downInst.innerHTML="<div class=\"downloader\"><div class=\"intoMark\" onclick=\"
 document.body.appendChild(downInst);
 
 var i=0;
-/*
-var cssLink = document.createElement('div');
-cssLink.innerHTML="<link href=\"classicStyle.css\" rel=\"stylesheet\" type=\"text/css\">";
-document.head.appendChild(cssLink);
-*/
+
 var htmlElement1 = document.createElement('div');
 htmlElement1.innerHTML="<a href=\"mailto:oneandonlytobe@gmail.com\" class=\"a5\"><img src=\"http://nithins.cf/personalCloud/question-circle-solid.svg\" width=\"35px\"></a><div class=\"Download a4\" onclick=\"download()\"><img src=\"http://nithins.cf/personalCloud/download-solid.svg\" width=\"30px\"></div>";
 document.body.appendChild(htmlElement1);
 
-const allLinks=document.querySelectorAll("a");
-for(linki of allLinks){
-  linki.href="javascript:void(0);";
-}
-
-
-var iarea=document.querySelector('.inpt');
-var bcpp;
-
-function myprompt(element){
-  iarea.style.display='block';
-  console.log(element.innerHTML)
-  document.querySelector('.iinput').value=element.innerHTML;
-  bcpp=element.innerHTML;
-}
-
 console.log(childrenactivated);
 alert(childrenactivated+" editable elements found. Happy editing :)");
 
+var headpart=document.querySelector('head');
+var styleChild = document.createElement("div");
+styleChild.innerHTML="<link href=\"classicStyle.css\" type=\"text/stylesheet\" rel=\"stylesheet\">";
+headpart.appendChild(styleChild);
 
 
 const elements=document.querySelectorAll('.et');
 
 for(element of elements){
+  element.addEventListener("dblclick",function(){
+    let myEdit=this;
+    document.querySelector('.inputArea').style.display='block';
+    document.querySelector('.textInput-area').value=this.innerHTML;
+    document.querySelector('.input-submit-button').addEventListener('click',function(event){
+      if(document.querySelector('.textarea-link').value==''){
+        myEdit.innerHTML=document.querySelector('.textInput-area').value;
+        console.log(document.querySelector('.textInput-area').value)
+      }
+      else{
+        myEdit.innerHTML="<a href=\""+ document.querySelector('.textarea-link').value +"\">"+ document.querySelector('.textInput-area').value + "</a>";
+        console.log("done")
+      }
+      document.querySelector('.inputArea').style.display='none';
+      event.stopPropagation();
+      event.cancelBubble = true;
+    },false)
+  })
+}
+
+
+
+
+/* ITS CHANGING EVERYTHING
+
+for(element of elements){
 element.addEventListener("dblclick",function(){
-    myprompt(this);
+    document.querySelector('.inpt').style.display='block';
+    console.log(this.innerHTML)
+    document.querySelector('.iinput').value=this.innerHTML;
+    bcpp=this.innerHTML;
+
     var iarea=document.querySelector('.inpt');
     isubmitButton=document.querySelector('.isubmit');
     
@@ -75,16 +93,16 @@ element.addEventListener("dblclick",function(){
     iarea.style.display='none';
     this.innerHTML=textHTML;
     this.classList.remove('active');
+    textHTML="";
+    bcpp="";
     console.log(this);
   });
 });
 }
+*/
 
-var linkinsertB=document.querySelector('#L');
-linkinsertB.addEventListener('click',function(){
-      var textLINK=prompt("Enter the link");
-      document.querySelector('.iinput').value="<a href=\""+ textLINK +"\">"+ document.querySelector('.iinput').value + "</a>";
-    });
+//document.querySelector('.iinput').value="<a href=\""+ textLINK +"\">"+ document.querySelector('.iinput').value + "</a>";
+
 
 
 

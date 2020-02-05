@@ -180,55 +180,52 @@ input[type="color"]{
 	cursor: hand;
 }
 
-.inpt{
-	position: fixed;
-	height: 100%;
-	width: 100%;
-	background-color: rgba(0, 0, 0, 0.822);
-	top: 0;
-	display: none;
-}
-.inpi{
-	border: 1.5px solid rgb(47, 0, 255);
-	position: fixed;
-	top: 50%;
-	right: 50%;
-	margin: -105.5px -177.75px 0 0 ;
-	background-color: white;
-	padding: 2em;
-	text-align: center;
-	background-color: rgb(46, 46, 46);
-	border-radius: 10px;
-}
-.inpb{
-	margin: 0.75em;
-}
-.pickerg{
-	position: absolute;
-	bottom: 23%;
-	right: 70px;
-	left: 40.5%;
-}
-.isubmit{
-	text-align: center;
-	background-color: rgb(119, 248, 68);
-	border-radius: 5px;
-	border: none;
-	
-}
-input[type="color"]{
-	background-color: black;
-	resize: none;
-}
-.inpl{
-	display: none;
-}
-#L{
-	position: absolute;
-	top: 55%;
-	left: 30%;
-	background-color: rgb(107, 255, 49);
-	border-radius: 5px;
-	border: none;
 
+.inputArea{
+	background-color: rgba(0, 0, 0, 0.746);
+	min-height: 100vh;
+	min-width: 100vw;
+	position: relative;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.inputBox{
+	border: 2px solid rgb(0, 0, 0);
+	margin: auto;
+	width: 300px;
+	padding: 10px;
+	text-align: center;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding-top: 20px;
+	border-radius: 7px;
+	background-color: rgb(236, 234, 234);
+}
+
+.InputBoxes{
+	background-color: rgb(255, 255, 255);
+	color: black;
+	resize: vertical;
+	border-radius: 7px;
+	border: 2px solid rgb(0, 0, 0);
+	padding: 10px;
+}
+.input-submit-button{
+	margin-top: 20px;
+	font-size: 1.2em;
+	background-color: rgb(170, 255, 0);
+	border: none;
+	border-radius: 3px;
+	padding: 10px 19px 10px 19px;
+	margin-bottom: 10px;
+	border: 1px solid black;
+}
+.input-submit-button:hover{
+	background-color: rgb(30, 255, 0);
 }
